@@ -1,6 +1,6 @@
 console.log('funguju!');
 
-const createMovieDetail = (movies) => {
+const movieHomework = (movies) => {
     let movieListElm = document.querySelector('.movie-list')
     movieListElm.innerHTML = movies
         .map((movie) => `
@@ -28,10 +28,10 @@ fetch('https://apps.kodim.cz/daweb/trening-api/apis/movie-api/movies')
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        createMovieDetail(data)
+        movieHomework(data)
     })
 
-const createListGenres = (listGenre) => {
+const genres = (listGenre) => {
     let selectGenreElm = document.querySelector('#select-genre')
     selectGenreElm.innerHTML = listGenre
         .map(genre =>
@@ -45,17 +45,17 @@ fetch('https://apps.kodim.cz/daweb/trening-api/apis/movie-api/genres')
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        createListGenres(data)
+        genres(data)
     })
 
 document.querySelector('.filters').addEventListener('submit', (event) => {
     event.preventDefault()
-    let selectElmValue = document.querySelector('#select-genre').value
-    fetch('https://apps.kodim.cz/daweb/trening-api/apis/movie-api/movies?genre=' + `${selectElmValue} `)
+    let selectOfValue = document.querySelector('#select-genre').value
+    fetch('https://apps.kodim.cz/daweb/trening-api/apis/movie-api/movies?genre=' + `${selectOfValue} `)
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            createMovieDetail(data)
+            movieHomework(data)
         })
 })
 
