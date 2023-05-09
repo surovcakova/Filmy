@@ -56,7 +56,7 @@ document.querySelector('.filters').addEventListener('submit', (event) => {
         .then(data => {
             console.log(data)
             movieHomework(data)
-        })
+    })
 })
 
 
